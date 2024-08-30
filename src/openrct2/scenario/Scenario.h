@@ -179,4 +179,4 @@ void ScenarioSuccessSubmitName(OpenRCT2::GameState_t& gameState, const char* nam
 void ScenarioAutosaveCheck();
 
 struct ScenarioIndexEntry;
-void GeneratePreviewImage(const OpenRCT2::GameState_t& gameState, ScenarioIndexEntry& entry);
+void GeneratePreviewImage(ScenarioIndexEntry& entry);
