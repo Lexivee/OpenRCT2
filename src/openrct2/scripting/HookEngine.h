@@ -42,6 +42,7 @@ namespace OpenRCT2::Scripting
         MAP_CHANGE,
         MAP_CHANGED,
         MAP_SAVE,
+        MONEY_SPEND,
         COUNT,
         UNDEFINED = -1,
     };
