@@ -122,6 +122,7 @@ Appreciation for contributors who have provided substantial work, but are no lon
 * Arnold Zhou (mrmagic2020) - Various plugin additions, new game option, misc.
 * John Dolph (johnwdolph) - Ride music UI, misc.
 * Harry Hopkinson (Harry-Hopkinson) - Added Cheat for guests ignoring price of rides and stalls.
+* (J-PIE-314) - Flat ride clearance reduction.
 
 ## Bug fixes & Refactors
 * Claudio Tiecher (janclod)
