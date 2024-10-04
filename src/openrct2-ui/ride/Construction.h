@@ -50,6 +50,7 @@ namespace OpenRCT2
         TrackElemType::Brakes,
         TrackElemType::DiagBrakes,
         TrackElemType::Down25Brakes,
+        TrackElemType::DiagDown25Brakes,
         TrackElemType::OnRidePhoto,
         TrackElemType::LeftQuarterBankedHelixLargeUp,
         TrackElemType::RightQuarterBankedHelixLargeUp,
@@ -143,7 +144,7 @@ namespace OpenRCT2
     constexpr size_t DropdownLength = DropdownOrder.size();
 
     // Update the magic number with the current number of track elements to silence
-    static_assert(EnumValue(TrackElemType::Count) == 340, "Reminder to add new track element to special dropdown list");
+    static_assert(EnumValue(TrackElemType::Count) == 341, "Reminder to add new track element to special dropdown list");
 
     constexpr bool TrackPieceDirectionIsDiagonal(const uint8_t direction)
     {
