@@ -369,7 +369,7 @@ namespace OpenRCT2::TrackMetaData
             { 4, 4, 0, 0, -32, 32 },   // TrackElemType::DiagBrakes
             { 4, 4, 0, 0, -32, 32 },   // TrackElemType::DiagBlockBrakes
 		    { 0, 0, 16, 0, 0, 0 },     // TrackElemType::Down25Brakes
-            { 4, 4, 16, 0, -32, 32 }   // TrackElemType::DiagDown25Brakes
+            { 4, 4, 16, 0, -32, 32 },  // TrackElemType::DiagDown25Brakes
     };
     static_assert(std::size(_trackCoordinates) == EnumValue(TrackElemType::Count));
     
@@ -12609,7 +12609,7 @@ namespace OpenRCT2::TrackMetaData
         /* TrackElemType::Down25Brakes */
         { 1, { kDown25Seq0 } },
         /* TrackElemType::DiagDown25Brakes */
-        { 4, { kDiagDown25Seq0, kDiagDown25Seq1, kDiagDown25Seq2, kDiagDown25Seq3 } }
+        { 4, { kDiagDown25Seq0, kDiagDown25Seq1, kDiagDown25Seq2, kDiagDown25Seq3 } },
     };
 
     static constexpr auto BuildDescriptorTable()
