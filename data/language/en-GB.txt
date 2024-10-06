@@ -3615,7 +3615,7 @@ STR_6538    :Shows regular paths in the queues dropdown of the Footpaths window.
 STR_6539    :Brake Closed
 STR_6540    :{WINDOW_COLOUR_2}Special thanks to the following companies for allowing their likeness:
 STR_6541    :{WINDOW_COLOUR_2}Rocky Mountain Construction Group, Josef Wiegand GmbH & Co. KG, Intamin Amusement Rides Int. Corp. Est.
-STR_6542    :Contributors
+STR_6542    :{NEWLINE}{NEWLINE}{WINDOW_COLOUR_2}Rocky Mountain Construction Group{NEWLINE}Josef Wiegand GmbH & Co. KG{NEWLINE}Maurer Rides GmbH
 STR_6543    :Contributors…
 STR_6544    :Loan cannot be negative!
 STR_6545    :Use RCT1 interest calculation
