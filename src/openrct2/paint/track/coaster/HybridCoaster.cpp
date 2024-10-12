@@ -14426,7 +14426,7 @@ namespace OpenRCT2::HybridRC
         }
     }
 
-	TRACK_PAINT_FUNCTION GetTrackPaintFunction(OpenRCT2::TrackElemType trackType)
+    TRACK_PAINT_FUNCTION GetTrackPaintFunction(OpenRCT2::TrackElemType trackType)
     {
         switch (trackType)
         {

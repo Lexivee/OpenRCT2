@@ -18630,7 +18630,7 @@ namespace OpenRCT2::SingleRailRC
         }
     }
 
-	TRACK_PAINT_FUNCTION GetTrackPaintFunction(OpenRCT2::TrackElemType trackType)
+    TRACK_PAINT_FUNCTION GetTrackPaintFunction(OpenRCT2::TrackElemType trackType)
     {
         switch (trackType)
         {
