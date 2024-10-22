@@ -236,6 +236,12 @@ declare global {
         captureImage(options: CaptureOptions): void;
 
         /**
+         * Play the sound effect.
+         * @param options Options that play the sound.
+         */
+        playSound(options: SoundOptions): void;
+
+        /**
          * @deprecated Use {@link ObjectManager.getObject} instead.
          */
         getObject(type: ObjectType, index: number): LoadedImageObject;
@@ -600,6 +606,18 @@ declare global {
          * Whether to enable transparency in the screenshot.
          */
         transparent?: boolean;
+    }
+
+    interface SoundOptions {
+        soundId: number;
+
+        /**
+         * If location is not null, volume and pan are ignored.
+         * location OR volume with pan must not be null.
+         */
+        volume?: number;
+        pan?: number;
+        location?: CoordsXYZ;
     }
 
     type GameMode =
