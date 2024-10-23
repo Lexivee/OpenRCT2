@@ -178,7 +178,6 @@ namespace OpenRCT2::Scripting
             auto ctx = GetContext()->GetScriptEngine().GetContext();
             try
             {
-                bool is3D = false;
                 OpenRCT2::Audio::SoundId soundId = OpenRCT2::Audio::SoundId(options["soundId"].as_uint());
 
                 auto dukLocation = options["location"];
