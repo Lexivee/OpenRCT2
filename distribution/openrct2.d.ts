@@ -613,7 +613,7 @@ declare global {
 
         /**
          * If location is not null, volume and pan are ignored.
-         * location OR volume with pan must not be null.
+         * location OR volume and pan are required.
          */
         volume?: number;
         pan?: number;
