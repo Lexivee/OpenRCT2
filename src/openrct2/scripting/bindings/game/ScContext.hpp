@@ -13,7 +13,7 @@
 
 #    include "../../../OpenRCT2.h"
 #    include "../../../actions/GameAction.h"
-#    include "../../../audio/Audio.h"
+#    include "../../../audio/audio.h"
 #    include "../../../interface/Screenshot.h"
 #    include "../../../localisation/Formatting.h"
 #    include "../../../object/ObjectManager.h"
