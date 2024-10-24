@@ -13,7 +13,6 @@
 
 #    include "../../../OpenRCT2.h"
 #    include "../../../actions/GameAction.h"
-#    include "../../../audio/audio.h"
 #    include "../../../interface/Screenshot.h"
 #    include "../../../localisation/Formatting.h"
 #    include "../../../object/ObjectManager.h"
@@ -162,39 +161,6 @@ namespace OpenRCT2::Scripting
                 }
 
                 CaptureImage(captureOptions);
-            }
-            catch (const DukException&)
-            {
-                duk_error(ctx, DUK_ERR_ERROR, "Invalid options.");
-            }
-            catch (const std::exception& ex)
-            {
-                duk_error(ctx, DUK_ERR_ERROR, ex.what());
-            }
-        }
-
-        void playSound(const DukValue& options)
-        {
-            auto ctx = GetContext()->GetScriptEngine().GetContext();
-            try
-            {
-                OpenRCT2::Audio::SoundId soundId = OpenRCT2::Audio::SoundId(options["soundId"].as_uint());
-
-                auto dukLocation = options["location"];
-                if (dukLocation.type() == DukValue::Type::OBJECT)
-                {
-                    CoordsXYZ loc;
-                    loc.x = dukLocation["x"].as_int();
-                    loc.y = dukLocation["y"].as_int();
-                    loc.z = dukLocation["z"].as_int();
-                    OpenRCT2::Audio::Play3D(soundId, loc);
-                }
-                else
-                {
-                    int32_t volume = options["volume"].as_int();
-                    int32_t pan = AsOrDefault(options["pan"], 0);
-                    OpenRCT2::Audio::Play(soundId, volume, pan);
-                }
             }
             catch (const DukException&)
             {
@@ -497,7 +463,6 @@ namespace OpenRCT2::Scripting
             dukglue_register_method(ctx, &ScContext::clearInterval, "clearInterval");
             dukglue_register_method(ctx, &ScContext::clearTimeout, "clearTimeout");
             dukglue_register_method(ctx, &ScContext::getIcon, "getIcon");
-            dukglue_register_method(ctx, &ScContext::playSound, "playSound");
         }
     };
 

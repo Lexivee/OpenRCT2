@@ -236,12 +236,6 @@ declare global {
         captureImage(options: CaptureOptions): void;
 
         /**
-         * Play the sound effect.
-         * @param options Options that play the sound.
-         */
-        playSound(options: SoundOptions): void;
-
-        /**
          * @deprecated Use {@link ObjectManager.getObject} instead.
          */
         getObject(type: ObjectType, index: number): LoadedImageObject;
@@ -608,16 +602,22 @@ declare global {
         transparent?: boolean;
     }
 
-    interface SoundOptions {
-        soundId: number;
+    type SoundOptions = SoundOptions2d | SoundOptions3d;
 
-        /**
-         * If location is not null, volume and pan are ignored.
-         * location OR volume and pan are required.
-         */
-        volume?: number;
-        pan?: number;
-        location?: CoordsXYZ;
+    interface SoundOptionsBase {
+        soundId: number; // see SoundId in openrct2/audio/audio.h
+    }
+
+    interface SoundOptions2d extends SoundOptionsBase {
+        location?: never;
+        volume: number;
+        pan: number;
+    }
+
+    interface SoundOptions3d extends SoundOptionsBase {
+        location: CoordsXYZ;
+        volume?: never;
+        pan?: never;
     }
 
     type GameMode =
@@ -4380,6 +4380,12 @@ declare global {
         registerToolboxMenuItem(text: string, callback: () => void): void;
 
         registerShortcut(desc: ShortcutDesc): void;
+
+        /**
+         * Play the sound effect.
+         * @param options Options that play the sound.
+         */
+        playSound(options: SoundOptions): void;
     }
 
     /**
