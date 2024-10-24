@@ -362,7 +362,7 @@ namespace OpenRCT2::Scripting
                 duk_error(_scriptEngine.GetContext(), DUK_ERR_ERROR, "Invalid parameters.");
             }
         }
-        
+
         void playSound(const DukValue& options)
         {
             auto ctx = _scriptEngine.GetContext();
