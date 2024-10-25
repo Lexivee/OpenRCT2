@@ -15,6 +15,8 @@
  *****************************************************************************/
 #pragma endregion
 
+
+
 #include "../../../drawing/Drawing.h"
 #include "../../../interface/Viewport.h"
 #include "../../../ride/RideData.h"
@@ -22,12 +24,14 @@
 #include "../../../ride/TrackPaint.h"
 #include "../../../sprites.h"
 #include "../../../world/Map.h"
+#include "../../../world/tile_element/TrackElement.h"
 #include "../../Paint.h"
 #include "../../support/MetalSupports.h"
 #include "../../tile_element/Paint.TileElement.h"
 #include "../../tile_element/Segment.h"
 #include "../../track/Segment.h"
 #include "../../track/Support.h"
+
 using namespace OpenRCT2;
 
 static constexpr MetalSupportType kSupportType = MetalSupportType::Tubes;
@@ -19591,7 +19595,7 @@ namespace SpinningRC
         SpinningRCTrackLeftQuarterTurn1(session, ride, trackSequence, (direction - 1) & 3, height, trackElement, supportType);
     }
 
-    TRACK_PAINT_FUNCTION GetTrackPaintFunctionSpinningRC(int32_t trackType)
+    TRACK_PAINT_FUNCTION GetTrackPaintFunctionSpinningRC(OpenRCT2::TrackElemType trackType)
     {
         switch (trackType)
         {
