@@ -15,8 +15,6 @@
  *****************************************************************************/
 #pragma endregion
 
-
-
 #include "../../../drawing/Drawing.h"
 #include "../../../interface/Viewport.h"
 #include "../../../ride/RideData.h"
