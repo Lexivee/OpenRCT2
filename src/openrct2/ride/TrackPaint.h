@@ -645,4 +645,3 @@ namespace SpinningRC
 {
     TRACK_PAINT_FUNCTION GetTrackPaintFunctionSpinningRC(OpenRCT2::TrackElemType trackType);
 }
-
