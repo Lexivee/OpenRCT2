@@ -63,7 +63,7 @@ static constexpr const uint32_t SpinningRCDiagBlockBrakeImages[2][kNumOrthogonal
     },
 };
 
-namespace SpinningRC
+namespace OpenRCT2::SpinningRC
 {
     static void SpinningRCTrackFlat(
         PaintSession& session, const Ride& ride, uint8_t trackSequence, uint8_t direction, int32_t height,
@@ -20101,5 +20101,5 @@ namespace SpinningRC
             default:
                 return nullptr;
         }
-
-    } // namespace SpinningRC
+    }
+} // namespace OpenRCT2::SpinningRC
