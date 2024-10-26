@@ -30,10 +30,9 @@
 #include "../../track/Segment.h"
 #include "../../track/Support.h"
 
-
 static constexpr MetalSupportType kSupportType = MetalSupportType::Tubes;
-    
-        static constexpr uint32_t _SpinningRCBlockBrakeImages[kNumOrthogonalDirections][2] = {
+
+static constexpr uint32_t _SpinningRCBlockBrakeImages[kNumOrthogonalDirections][2] = {
     { SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_SW_NE_OPEN, SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_SW_NE_CLOSED },
     { SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_NW_SE_OPEN, SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_NW_SE_CLOSED },
     { SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_SW_NE_OPEN, SPR_G2_SPINNING_TRACK_BLOCK_BRAKE_SW_NE_CLOSED },
@@ -20101,4 +20100,4 @@ namespace OpenRCT2::SpinningRC
                 return nullptr;
         }
     }
-}// namespace OpenRCT2::SpinningRC
+} // namespace OpenRCT2::SpinningRC
