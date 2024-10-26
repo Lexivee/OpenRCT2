@@ -20098,7 +20098,7 @@ namespace SpinningRC
                 return SpinningRCTrackLeftQuarterTurn1;
             case TrackElemType::RightQuarterTurn1Tile:
                 return SpinningRCTrackRightQuarterTurn1;
-        }
+            default:
         return nullptr;
     }
 
