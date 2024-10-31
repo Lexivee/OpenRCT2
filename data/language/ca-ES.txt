@@ -3135,9 +3135,9 @@ STR_6006    :La vista retallada només mostra els elements del mapa que estan a 
 STR_6007    :Alçada de tall
 STR_6008    :Feu clic per a alternar entre el valor sense format i el valor amb unitats de mesura.
 STR_6009    :Trieu l’alçada de tall
-STR_6010    :{COMMA2DP32} m
-STR_6011    :{COMMA1DP16} ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP} m
+STR_6011    :{HEIGHT2DP} ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Els visitants només paguen l’entrada al parc i algunes instal·lacions.{NEWLINE}Les atraccions són gratuïtes.
 STR_6014    :Els visitants només pagaran per a pujar a les atraccions i per a fer servir la resta d’instal·lacions.{NEWLINE}L’entrada al parc és gratuïta.
 STR_6015    :Inclinat

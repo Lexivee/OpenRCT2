@@ -3133,9 +3133,9 @@ STR_6006    :Cut-away view only displays map elements at or below the cut height
 STR_6007    :علو القطع
 STR_6008    :Click to toggle raw value<->value in measurement units
 STR_6009    :حدد علو القطع
-STR_6010    :{COMMA2DP32}متر
-STR_6011    :{COMMA1DP16}قدم
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP}متر
+STR_6011    :{HEIGHT2DP}قدم
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Guests will only pay the ticket to enter the park and services.{NEWLINE}Ride entry is free.
 STR_6014    :Guests will only pay entrance tickets for rides and services.{NEWLINE}They won’t pay anything to enter the park.
 STR_6015    :منحدر

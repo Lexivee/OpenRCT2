@@ -3129,9 +3129,9 @@ STR_6006    :Hiermee worden alleen elementen onder een bepaalde hoogte getoond,{
 STR_6007    :Snijhoogte
 STR_6008    :Klik hierop om te wisselen tussen interne waardes en toegankelijke waardes (zoals meters).
 STR_6009    :Selecteer een hoogte waarboven kaartelementen niet meer moeten worden getekend.
-STR_6010    :{COMMA2DP32} m
-STR_6011    :{COMMA1DP16} ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP} m
+STR_6011    :{HEIGHT2DP} ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Bezoekers betalen om het park te betreden en voor faciliteiten.{NEWLINE}Attracties zijn gratis.
 STR_6014    :Bezoekers betalen om in attracties te gaan en voor faciliteiten{NEWLINE}Het park betreden is gratis.
 STR_6015    :Helling

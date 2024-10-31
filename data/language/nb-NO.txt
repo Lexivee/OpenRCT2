@@ -3128,9 +3128,9 @@ STR_6006    :Utklippskamera skjuler elementer over utklippshøyden (for vertikal
 STR_6007    :Utklippshøyde
 STR_6008    :Skru på/av rå verdi<->verdi i måleenheter
 STR_6009    :Velg utklippshøyde
-STR_6010    :{COMMA2DP32}m
-STR_6011    :{COMMA1DP16}ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP}m
+STR_6011    :{HEIGHT2DP}ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Gjester betaler kun for inngang, tjenester og kioskvarer.{NEWLINE}De betaler ikke for attraksjoner.
 STR_6014    :Gjester betaler kun for attraksjoner, tjenester og kioskvarer.{NEWLINE}De betaler ikke for inngang.
 STR_6015    :Helning

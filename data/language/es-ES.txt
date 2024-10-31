@@ -3134,9 +3134,9 @@ STR_6006    :La vista aislada sólo mostrará los elementos igual o menor que la
 STR_6007    :Altura de corte
 STR_6008    :Da clic para alternar entre el valor sin formato y el valor en unidades de medida.
 STR_6009    :Selecciona la altura de corte
-STR_6010    :{COMMA2DP32}m
-STR_6011    :{COMMA1DP16}ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP}m
+STR_6011    :{HEIGHT2DP}ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Los visitantes sólo pagarán por la entrada del parque y los servicios.{NEWLINE}La entrada de la atracción es gratis.
 STR_6014    :Los visitantes sólo pagarán por la entrada de atracciones y servicios.{NEWLINE}Los visitantes no pagan por entrar al parque.
 STR_6015    :Inclinado

@@ -15,6 +15,7 @@
 #include <openrct2/config/Config.h>
 #include <openrct2/drawing/Drawing.h>
 #include <openrct2/localisation/Formatter.h>
+#include <openrct2/localisation/Formatting.h>
 #include <openrct2/localisation/StringIds.h>
 #include <openrct2/paint/Paint.h>
 #include <openrct2/sprites.h>
@@ -312,27 +313,22 @@ namespace OpenRCT2::Ui::Windows
                     }
                     else
                     {
+                        auto ft = Formatter();
+                        ft.Add<int32_t>(gClipHeight);
                         // Height label is Real Values.
                         // Print the value in the configured measurement units.
                         switch (Config::Get().general.MeasurementFormat)
                         {
                             case MeasurementFormat::Metric:
                             case MeasurementFormat::SI:
-                            {
-                                auto ft = Formatter();
-                                ft.Add<fixed32_2dp>(
-                                    static_cast<fixed32_2dp>(FIXED_2DP(gClipHeight, 0) / 2 * 1.5f - FIXED_2DP(10, 50)));
                                 DrawTextBasic(dpi, screenCoords, STR_UNIT2DP_SUFFIX_METRES, ft, { this->colours[0] });
                                 break;
-                            }
                             case MeasurementFormat::Imperial:
-                            {
-                                auto ft = Formatter();
-                                ft.Add<fixed16_1dp>(
-                                    static_cast<fixed16_1dp>(FIXED_1DP(gClipHeight, 0) / 2.0f * 5 - FIXED_1DP(35, 0)));
                                 DrawTextBasic(dpi, screenCoords, STR_UNIT1DP_SUFFIX_FEET, ft, { this->colours[0] });
                                 break;
-                            }
+                            default:
+                                DrawTextBasic(dpi, screenCoords, STR_UNIT2DP_SUFFIX_METRES, ft, { this->colours[0] });
+                                break;
                         }
                     }
                 }

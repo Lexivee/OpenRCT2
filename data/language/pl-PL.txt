@@ -3126,9 +3126,9 @@ STR_6006    :Widok przekroju na podgląd elementów znajdujących się pod innym
 STR_6007    :Wysokość cięcia
 STR_6008    :Kliknij aby przełączyć surowe<->wartości jednostek pomiarowych
 STR_6009    :Wy
-STR_6010    :{COMMA2DP32}m
-STR_6011    :{COMMA1DP16}ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP}m
+STR_6011    :{HEIGHT2DP}ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :Goście będą płacić jedynie na wstęp do parku i usługi.{NEWLINE}Atrakcje są darmowe.
 STR_6014    :Goście będą płacić za bilety wstępu na atrakcje i usługi.{NEWLINE}Nie będą płacić za wstęp do parku.
 STR_6015    :Nachylony

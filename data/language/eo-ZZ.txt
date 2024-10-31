@@ -3130,9 +3130,9 @@ STR_6006    :Tranĉita vido nur montras mapelementojn ĉe aŭ sub la tranĉita a
 STR_6007    :Alteco por tranĉi
 STR_6008    :Alklaku por baskuligi inter kruda valoro kaj valoro en mezurunuoj
 STR_6009    :Elekti altecon por tranĉi
-STR_6010    :{COMMA2DP32}m
-STR_6011    :{COMMA1DP16}ft
-STR_6012    :{COMMA1DP16}
+STR_6010    :{HEIGHT2DP}m
+STR_6011    :{HEIGHT2DP}ft
+STR_6012    :{HEIGHT2DP}
 STR_6013    :{Gastoj nur pagos la bileton por eniri la parkon kaj servojn.{NEWLINE}Atrakcio-eniro estas senpaga.
 STR_6014    :Gastoj pagos nur enirbiletojn por atrakcioj kaj servoj.{NEWLINE}Ili pagos neniom por eniri la parkon.
 STR_6015    :Dekliva
