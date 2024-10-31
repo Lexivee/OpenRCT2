@@ -612,15 +612,17 @@ namespace OpenRCT2
                     }
                 }
                 break;
+            // code that I added?
             case FormatToken::Height2dp:
                 if constexpr (std::is_integral<T>())
                 {
                     auto metres = HeightUnitsToMetres(arg);
+                    auto feet = 0;
                     switch (Config::Get().general.MeasurementFormat)
                     {
                         default:
                         case MeasurementFormat::Imperial:
-                            auto feet = MetresToFeet(metres);   
+                            feet = MetresToFeet(metres);   
                             FormatNumber<2, true>(ss, feet); 
                             FormatStringID(ss, STR_UNIT_SUFFIX_FEET, feet);
                             break;
