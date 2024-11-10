@@ -804,7 +804,7 @@ bool TrackSequenceGetNext(const CoordsXYE& input, CoordsXYE* output)
     CoordsXY inputCoords = { input.x, input.y };
     auto origin = inputCoords + inputOffset.Rotate(DirectionReverse(rotation));
 
-    const auto& nextClearance = ted.sequences[sequenceIndex+1].clearance;
+    const auto& nextClearance = ted.sequences[sequenceIndex + 1].clearance;
     CoordsXY nextOffset = { nextClearance.x, nextClearance.y };
     CoordsXY nextCoords = origin + nextOffset.Rotate(rotation);
 

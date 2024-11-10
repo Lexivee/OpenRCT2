@@ -901,7 +901,7 @@ static void RideRatingsCalculate(RideRatingUpdateState& state, Ride& ride)
     {
         FlatRideShelterCalculate(ride);
     }
-    
+
     const auto shelteredEighths = GetNumOfShelteredEighths(ride);
     ride.sheltered_eighths = (rrd.RideShelter == -1) ? shelteredEighths.TotalShelteredEighths : rrd.RideShelter;
 
