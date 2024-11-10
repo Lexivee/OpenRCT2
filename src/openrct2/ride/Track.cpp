@@ -37,6 +37,7 @@
 #include "TrackDesign.h"
 
 #include <cassert>
+#include <openrct2\object\SmallSceneryEntry.h>
 
 using namespace OpenRCT2;
 using namespace OpenRCT2::TrackMetaData;
@@ -718,4 +719,49 @@ std::optional<CoordsXYZD> GetTrackSegmentOrigin(const CoordsXYE& posEl)
     coords.z -= trackBlock.z;
 
     return CoordsXYZD(coords, direction);
+}
+
+// Extracted from the calculation in Vehicle::UpdateMeasurements()
+bool TrackGetIsSheltered(const CoordsXYZ& input)
+{
+    // Set tile_element to first element. Since elements aren't always ordered by base height,
+    // we must start at the first element and iterate through each tile element.
+    auto tileElement = MapGetFirstElementAt(input);
+    if (tileElement == nullptr)
+        return false;
+
+    bool coverFound = false;
+    do
+    {
+        // If the tile_element is lower than the vehicle, continue (don't set flag)
+        if (tileElement->GetBaseZ() <= input.z)
+            continue;
+
+        if (tileElement->GetType() == TileElementType::Surface)
+        {
+            coverFound = true;
+            break;
+        }
+
+        if (tileElement->GetType() == TileElementType::LargeScenery)
+        {
+            coverFound = true;
+            break;
+        }
+
+        if (tileElement->GetType() == TileElementType::Path)
+        {
+            coverFound = true;
+            break;
+        }
+
+        if (tileElement->GetType() == TileElementType::SmallScenery && (tileElement->Flags & SMALL_SCENERY_FLAG_FULL_TILE) != 0)
+        {
+            coverFound = true;
+            break;
+        }
+        // Iterate through each tile_element.
+    } while (!(tileElement++)->IsLastForTile());
+
+    return coverFound;
 }
