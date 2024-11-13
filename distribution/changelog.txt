@@ -3,6 +3,8 @@
 - Feature: [#23166] Add Galician translation.
 - Improved: [#23051] Add large sloped turns and new inversions to the Twister, Vertical Drop, Hyper and Flying Roller Coasters.
 - Improved: [#23123] Improve sorting of roller coasters in build new ride menu.
+- Fix: [#23064] Stand-Up Roller Coaster unbanked to banked track pieces are misaligned.
+- Fix: [#23066] Stand-Up Roller Coaster has many supports that don't join up to the track.
 
 0.4.16 (2024-11-03)
 ------------------------------------------------------------------------
