@@ -161,9 +161,31 @@ jobs:
         uses: ammaraskar/msvc-problem-matcher@master
       - name: Build OpenRCT2
         run: . scripts/setenv && build
+      - name: Upload unsigned binaries
+        id: upload-unsigned-binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-unsigned-$PLATFORM
+          path: |
+            bin/openrct2.exe
+            bin/openrct2.com
+      - name: Sign binaries
+        id: sign-binaries
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
+          organization-id: 645b821f-6283-45e1-8198-264997072801
+          project-slug: OpenRCT2
+          signing-policy-slug: 'test-signing'
+          artifact-configuration-slug: 'binaries'
+          github-artifact-id: ${{ steps.upload-unsigned-binaries.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: files-signed
       - name: Build artifacts
         run: |
           . scripts/setenv -q
+          mv files-signed/openrct2.com bin/openrct2.com
+          mv files-signed/openrct2.exe bin/openrct2.exe
           build-portable
           build-symbols
           build-installer -i
@@ -190,25 +212,6 @@ jobs:
         with:
           name: OpenRCT2-${{ needs.build_variables.outputs.name }}-${{ runner.os }}-symbols-${{ matrix.platform }}
           path: artifacts/OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-symbols-${{ matrix.platform }}.zip
-          if-no-files-found: error
-      - name: Sign files
-        id: sign-files
-        uses: signpath/github-action-submit-signing-request@v1
-        with:
-          api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
-          organization-id: 645b821f-6283-45e1-8198-264997072801
-          project-slug: OpenRCT2
-          signing-policy-slug: 'test-signing'
-          artifact-configuration-slug: 'initial'
-          github-artifact-id: ${{ steps.upload-symbols-windows-unsigned.outputs.artifact-id }}
-          wait-for-completion: true
-          output-artifact-directory: files-signed
-      - name: Upload signed symbols artifact (CI)
-        id: upload-symbols-windows-signed
-        uses: actions/upload-artifact@v4
-        with:
-          name: OpenRCT2-${{ needs.build_variables.outputs.name }}-${{ runner.os }}-symbols-${{ matrix.platform }}-signed
-          path: files-signed/*
           if-no-files-found: error
       - name: Run Tests
         if: matrix.platform != 'arm64'
