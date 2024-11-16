@@ -162,7 +162,7 @@ jobs:
       - name: Build OpenRCT2
         run: . scripts/setenv && build
       - name: Upload unsigned binaries
-        id: upload-unsigned-binaries
+        id: upload-windows-binaries-unsigned
         uses: actions/upload-artifact@v4
         with:
           name: OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-unsigned-${{ matrix.platform }}
@@ -178,7 +178,7 @@ jobs:
           project-slug: OpenRCT2
           signing-policy-slug: 'test-signing'
           artifact-configuration-slug: 'binaries'
-          github-artifact-id: ${{ steps.upload-unsigned-binaries.outputs.artifact-id }}
+          github-artifact-id: ${{ steps.upload-windows-binaries-unsigned.outputs.artifact-id }}
           wait-for-completion: true
           output-artifact-directory: files-signed
       - name: Download g2.dat on ARM64
