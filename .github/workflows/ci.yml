@@ -226,14 +226,13 @@ jobs:
           wait-for-completion: true
           output-artifact-directory: files-signed
       - name: Upload signed installer artifact (CI)
-        id: upload-windows-installer-unsigned
+        id: upload-windows-installer-signed
         uses: actions/upload-artifact@v4
         with:
           name: OpenRCT2-${{ needs.build_variables.outputs.name }}-${{ runner.os }}-installer-${{ matrix.platform }}
           path: files-signed/OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-installer-${{ matrix.platform }}.exe
           if-no-files-found: error
       - name: Upload symbols artifact (CI)
-        id: upload-symbols-windows-unsigned
         uses: actions/upload-artifact@v4
         with:
           name: OpenRCT2-${{ needs.build_variables.outputs.name }}-${{ runner.os }}-symbols-${{ matrix.platform }}
