@@ -602,7 +602,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
-          artifacts: |
+          name: |
             OpenRCT2-${{ needs.build_variables.outputs.name }}-Android
             OpenRCT2-${{ needs.build_variables.outputs.name }}-Linux-bookworm-x86_64
             OpenRCT2-${{ needs.build_variables.outputs.name }}-Linux-noble-x86_64
