@@ -180,7 +180,7 @@ jobs:
         id: sign-binaries
         env:
           SIGNPATH_API_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN }}
-        if: ${{ needs.build_variables.outputs.sign }}
+        if: ${{ needs.build_variables.outputs.sign == 'true' }}
         uses: signpath/github-action-submit-signing-request@v1
         with:
           api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
@@ -192,7 +192,7 @@ jobs:
           wait-for-completion: true
           output-artifact-directory: files-signed
       - name: Use signed binaries
-        if: ${{ needs.build_variables.outputs.sign }}
+        if: ${{ needs.build_variables.outputs.sign == 'true' }}
         run: |
           mv files-signed/openrct2.com bin/openrct2.com
           mv files-signed/openrct2.exe bin/openrct2.exe
@@ -228,7 +228,7 @@ jobs:
           if-no-files-found: error
       - name: Sign installer
         id: sign-installer
-        if: ${{ needs.build_variables.outputs.sign }}
+        if: ${{ needs.build_variables.outputs.sign == 'true' }}
         uses: signpath/github-action-submit-signing-request@v1
         with:
           api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
@@ -241,7 +241,7 @@ jobs:
           output-artifact-directory: files-signed
       - name: Upload signed installer artifact (CI)
         id: upload-windows-installer-signed
-        if: ${{ needs.build_variables.outputs.sign }}
+        if: ${{ needs.build_variables.outputs.sign == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: OpenRCT2-${{ needs.build_variables.outputs.name }}-${{ runner.os }}-installer-${{ matrix.platform }}
