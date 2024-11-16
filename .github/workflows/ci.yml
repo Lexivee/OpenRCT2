@@ -16,6 +16,17 @@ on:
       - '.github/workflows/localisation.yml'
       - '.gitignore'
       - '.vscode/**'
+  workflow_dispatch:
+    inputs:
+      sign:
+        description: Sign binaries
+        type: choice
+        options:
+          - 'no'
+          - test
+          - production
+        default: test
+
 defaults:
   run:
     shell: bash
