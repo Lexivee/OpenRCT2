@@ -165,7 +165,7 @@ jobs:
         id: upload-unsigned-binaries
         uses: actions/upload-artifact@v4
         with:
-          name: OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-unsigned-$PLATFORM
+          name: OpenRCT2-${{ needs.build_variables.outputs.name }}-windows-unsigned-${{ matrix.platform }}
           path: |
             bin/openrct2.exe
             bin/openrct2.com
