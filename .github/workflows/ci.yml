@@ -621,8 +621,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
-          pattern: |
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-(Android|Linux-bookworm-x86_64|Linux-noble-x86_64|Linux-AppImage|macOS-universal|Windows-portable-arm64|Windows-portable-win32|Windows-portable-win64|Windows-symbols-arm64|Windows-symbols-win32|Windows-symbols-win64)
+      # Having multiple artifacts named the same might be onfusing to the users. Drop the unsigned versions
+      - name: Remove unsigned artifacts
+        run: |
+          rm -rf *unsigned*
       - name: Concatenate sha1 files
         run: |
           ls -lR
