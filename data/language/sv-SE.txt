@@ -3135,9 +3135,9 @@ STR_6006    :Avskärnings-vyn kommer endast visa element på eller under den avs
 STR_6007    :Höjd
 STR_6008    :Klicka för att växla råvärden<->värden i måttenheter
 STR_6009    :Välj höjd på avskärning
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}fot
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}fot
+STR_6012    :{COMMA1DP16}
 STR_6013    :Besökarna kommer endast att betala för inträde, varor och tjänster.{NEWLINE}Åktursbiljetterna kommer att vara gratis.
 STR_6014    :Besökarna kommer endast betala för åkturer, varor och tjänster.{NEWLINE}De kommer inte betala något i inträde.
 STR_6015    :Lutande

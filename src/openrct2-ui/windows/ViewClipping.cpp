@@ -302,35 +302,9 @@ namespace OpenRCT2::Ui::Windows
                 case DisplayType::DisplayUnits:
                 {
                     // Print the value in the configured height label type:
-                    if (Config::Get().general.ShowHeightAsUnits)
-                    {
-                        // Height label is Units.
-                        auto ft = Formatter();
-                        ft.Add<fixed16_1dp>(static_cast<fixed16_1dp>(FIXED_1DP(gClipHeight, 0) / 2 - FIXED_1DP(7, 0)));
-                        DrawTextBasic(
-                            dpi, screenCoords, STR_UNIT1DP_NO_SUFFIX, ft,
-                            { this->colours[0] }); // Printing the value in Height Units.
-                    }
-                    else
-                    {
-                        auto ft = Formatter();
-                        ft.Add<int32_t>(gClipHeight);
-                        // Height label is Real Values.
-                        // Print the value in the configured measurement units.
-                        switch (Config::Get().general.MeasurementFormat)
-                        {
-                            case MeasurementFormat::Metric:
-                            case MeasurementFormat::SI:
-                                DrawTextBasic(dpi, screenCoords, STR_UNIT2DP_SUFFIX_METRES, ft, { this->colours[0] });
-                                break;
-                            case MeasurementFormat::Imperial:
-                                DrawTextBasic(dpi, screenCoords, STR_UNIT1DP_SUFFIX_FEET, ft, { this->colours[0] });
-                                break;
-                            default:
-                                DrawTextBasic(dpi, screenCoords, STR_UNIT2DP_SUFFIX_METRES, ft, { this->colours[0] });
-                                break;
-                        }
-                    }
+                    auto ft = Formatter();
+                    ft.Add<int32_t>(gClipHeight);
+                    DrawTextBasic(dpi, screenCoords, STR_UNIT2DP_SUFFIX, ft, { this->colours[0] });
                 }
             }
         }

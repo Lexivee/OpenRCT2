@@ -3136,9 +3136,9 @@ STR_6006    :La visualizzazione ritagliata mostra solo gli elementi della mappa 
 STR_6007    :Altezza sezionamento
 STR_6008    :Cliccare per cambiare tra valore grezzo e unità di misura
 STR_6009    :Selezionare altezza sezionamento
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}ft
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}ft
+STR_6012    :{COMMA1DP16}
 STR_6013    :I visitatori pagheranno solo l’accesso al parco e i servizi.{NEWLINE}L’ingresso nelle attrazioni è gratis.
 STR_6014    :I visitatori pagheranno solo l’ingresso nelle attrazioni.{NEWLINE}L’ingresso al parco è gratis.
 STR_6015    :Inclinato

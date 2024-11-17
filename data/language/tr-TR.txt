@@ -3120,9 +3120,9 @@ STR_6006    :Kesik Görüntüleme sadece seçtiğiniz zeminin üzerinde veya alt
 STR_6007    :Yükseklik
 STR_6008    :Ölçüm birimlerinde ham değer<->değer arasında geçiş yapmak için tıklayın
 STR_6009    :Kesmek istediğiniz yüksekliğini seçiniz
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}ft
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}ft
+STR_6012    :{COMMA1DP16}
 STR_6013    :Müşteriler sadece park girişine ve tesislere ücret ödeyecektir{NEWLINE}Aletler ücretsiz
 STR_6014    :Müşteriler sadece alet girişlerine ve tesislere ücret ödeyecektir{NEWLINE}Park girişi ücretsiz
 STR_6015    :Yükselt

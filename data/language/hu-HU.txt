@@ -3130,9 +3130,9 @@ STR_6006    :A levágó nézet a térképnek csak a vágási magasságon és ala
 STR_6007    :Magasság:
 STR_6008    :Kattints ide a nyers értékek<->mértékegységek közti váltáshoz
 STR_6009    :A vágási magasság kiválasztása
-STR_6010    :{HEIGHT2DP} m
-STR_6011    :{HEIGHT2DP} láb
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32} m
+STR_6011    :{COMMA1DP16} láb
+STR_6012    :{COMMA1DP16}
 STR_6013    :A vendégek csak a park belépőjegyéért és a szolgáltatásokért fizetnek.{NEWLINE}A játékok használata ingyenes.
 STR_6014    :A vendégek csak a játékok belépőjegyéért és a szolgáltatásokért fizetnek.{NEWLINE}A parkba való belépésért nem fizetnek semmit.
 STR_6015    :Lejtős

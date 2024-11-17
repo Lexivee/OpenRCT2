@@ -3131,9 +3131,9 @@ STR_6006    :Seříznuté zobrazení vykresluje prvky mapy pouze do dané výšk
 STR_6007    :Výška řezu
 STR_6008    :Přepnout na hodnotu s/bez jednotek
 STR_6009    :Zvolit výšku řezu
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}ft
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}ft
+STR_6012    :{COMMA1DP16}
 STR_6013    :Návštěvníci platí pouze za vstup do parku a služby. Atrakce jsou zdrarma.
 STR_6014    :Návštěvníci platí pouze za služby a atrakce. Vstup do parku je zdarma.
 STR_6015    :Nakloněný

@@ -3128,9 +3128,9 @@ STR_6006    :Beskåret visning, viser kun kort elementer på, eller under beskæ
 STR_6007    :Beskærings højde
 STR_6008    :Klik for at vælge rå værdi<->værdi i indstillet måleenhed
 STR_6009    :Vælg beskærings højde
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}fod
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}fod
+STR_6012    :{COMMA1DP16}
 STR_6013    :Gæsterne betaler kun billetten for at komme ind i parken, og for tjenester. {NEWLINE} Adgang til forlystelser er gratis.
 STR_6014    :Gæsterne betaler kun billetter til forlystelser og tjenester. {NEWLINE} De betaler ikke noget for at komme ind i parken.
 STR_6015    :Skrå

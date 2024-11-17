@@ -3138,9 +3138,9 @@ STR_6006    :Leikattu näkymä näyttää vain karttaelementit leikkauskorkeuden
 STR_6007    :Leikkauksen korkeus
 STR_6008    :Klikkaa vaihtaaksesi raa’an arvon ja mittayksikön arvon välillä
 STR_6009    :Valitse leikkauskorkeus
-STR_6010    :{HEIGHT2DP}m
-STR_6011    :{HEIGHT2DP}ft
-STR_6012    :{HEIGHT2DP}
+STR_6010    :{COMMA2DP32}m
+STR_6011    :{COMMA1DP16}ft
+STR_6012    :{COMMA1DP16}
 STR_6013    :Kävijät maksavat ainoastaan puistoon sisäänpääsystä sekä palveluista.{NEWLINE}Laitteisiin pääsy on ilmaista.
 STR_6014    :Kävijät maksavat ainoastaan laitteisiin pääsystä sekä palveluista.{NEWLINE}Puistoon sisäänpääsy on ilmaista.
 STR_6015    :Mäki
