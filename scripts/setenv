@@ -16,9 +16,7 @@ echo -e "\033[0;36mSetting up environment for OpenRCT2...\033[0m"
 # Get the build number (number of commits since last tag)
 get_build_number()
 {
-    local TAG=$(git describe --tags --abbrev=0)
-    local BUILD=$(git rev-list --count $TAG..HEAD)
-    echo "${BUILD}"
+    echo "${DISTANCE_FROM_TAG}"
 }
 export OPENRCT2_BUILD=$(get_build_number)
 
