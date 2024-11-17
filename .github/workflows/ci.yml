@@ -621,21 +621,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
-          name: |
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Android
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Linux-bookworm-x86_64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Linux-noble-x86_64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Linux-AppImage
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-macOS-universal
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-portable-arm64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-portable-win32
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-portable-win64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-symbols-arm64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-symbols-win32
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-symbols-win64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-installer-arm64
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-installer-win32
-            OpenRCT2-${{ needs.build_variables.outputs.name }}-Windows-installer-win64
+          pattern: |
+            OpenRCT2-${{ needs.build_variables.outputs.name }}-(Android|Linux-bookworm-x86_64|Linux-noble-x86_64|Linux-AppImage|macOS-universal|Windows-portable-arm64|Windows-portable-win32|Windows-portable-win64|Windows-symbols-arm64|Windows-symbols-win32|Windows-symbols-win64)
       - name: Concatenate sha1 files
         run: |
           ls -lR
