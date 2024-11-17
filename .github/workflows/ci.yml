@@ -96,6 +96,7 @@ jobs:
         id: sign
         run: |
           echo "sign=${{ env.SIGNPATH_API_TOKEN != '' && (needs.build_variables.outputs.push || startsWith(github.ref, 'refs/tags/v')) }}"
+          echo sign=true
           # if using workflow_dispatch, use the provided certificate
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
             certificate=${{ github.event.inputs.sign }}
@@ -105,6 +106,7 @@ jobs:
           fi
           echo "certificate=$certificate"
           echo "sign=${{ env.SIGNPATH_API_TOKEN != '' && (needs.build_variables.outputs.push || startsWith(github.ref, 'refs/tags/v')) }}" >> $GITHUB_OUTPUT
+          echo sign=true >> $GITHUB_OUTPUT
           echo "certificate=$certificate" >> $GITHUB_OUTPUT
   lint-commit:
     name: Lint Commit Message
