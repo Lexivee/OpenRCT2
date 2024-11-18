@@ -612,6 +612,28 @@ namespace OpenRCT2
                     }
                 }
                 break;
+            // code that I added?
+            case FormatToken::Height2dp:
+                if constexpr (std::is_integral<T>())
+                {
+                    auto metres = HeightUnitsToMetres(arg);
+                    auto feet = 0;
+                    switch (Config::Get().general.MeasurementFormat)
+                    {
+                        default:
+                        case MeasurementFormat::Imperial:
+                            feet = MetresToFeet(metres);   
+                            FormatNumber<2, true>(ss, feet); 
+                            FormatStringID(ss, STR_UNIT_SUFFIX_FEET, feet);
+                            break;
+                        case MeasurementFormat::Metric:
+                        case MeasurementFormat::SI:
+                            FormatNumber<2, true>(ss, metres);
+                            FormatStringID(ss, STR_UNIT_SUFFIX_METRES, metres);
+                            break;
+                    }
+                }
+                break;
             case FormatToken::MonthYear:
             case FormatToken::MonthYearSentence:
                 if constexpr (std::is_integral<T>())
@@ -819,6 +841,7 @@ namespace OpenRCT2
                 case FormatToken::Comma16:
                 case FormatToken::Length:
                 case FormatToken::Height:
+                case FormatToken::Height2dp:
                 case FormatToken::Comma1dp16:
                     anyArgs.emplace_back(ReadFromArgs<int16_t>(args));
                     break;
