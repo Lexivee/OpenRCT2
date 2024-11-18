@@ -220,7 +220,7 @@ jobs:
           wait-for-completion: true
           output-artifact-directory: files-signed
           parameters: |
-            version: "${{ needs.build_variables.outputs.tag }}.${{ needs.build_variables.outputs.distance }}"
+            version: "${{ needs.build_variables.outputs.tag }}.${{ needs.build_variables.outputs.distance }}-${{ needs.build_variables.outputs.short-sha }}"
       - name: Use signed binaries
         if: ${{ needs.build_variables.outputs.sign == 'true' }}
         run: |

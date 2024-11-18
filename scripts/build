@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" ]]; then
     # Patch version.h
     echo -e "\033[0;36mPatching version.h...\033[0m"
     fileversion=$OPENRCT2_VERSION.$OPENRCT2_BUILD
-    productversion="$fileversion"
+    productversion="$fileversion-${OPENRCT2_SHA1_SHORT}"
     fileversion=${fileversion//./,}
     # FILEVERSION in the resource file can only take up to 4 digits in the version string, so we remove the surplus of version numbers
     fileversion=$(echo $fileversion | cut -f1-4 -d",")
