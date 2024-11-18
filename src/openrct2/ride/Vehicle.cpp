@@ -78,6 +78,9 @@ constexpr int16_t VEHICLE_MAX_SPIN_SPEED_WATER_RIDE = 512;
 constexpr int16_t VEHICLE_MIN_SPIN_SPEED_WATER_RIDE = -VEHICLE_MAX_SPIN_SPEED_WATER_RIDE;
 constexpr int16_t VEHICLE_STOPPING_SPIN_SPEED = 600;
 
+constexpr uint8_t kTrackSpeedShiftAmount = 16;
+constexpr uint8_t kBoosterAccelerationShiftAmount = 16;
+
 Vehicle* gCurrentVehicle;
 
 static uint8_t _vehicleBreakdown;
@@ -5452,7 +5455,7 @@ void Vehicle::ApplyNonStopBlockBrake()
             velocity = kBlockBrakeBaseSpeed;
             acceleration = 0;
         }
-        else if (velocity > (brake_speed << 16) + kBlockBrakeSpeedOffset)
+        else if (velocity > (brake_speed << kTrackSpeedShiftAmount) + kBlockBrakeSpeedOffset)
         {
             velocity -= velocity >> 4;
             acceleration = 0;
@@ -7102,9 +7105,9 @@ bool Vehicle::UpdateTrackMotionForwards(const CarEntry* carEntry, const Ride& cu
                 && curRide.breakdown_reason_pending == BREAKDOWN_BRAKES_FAILURE;
             if (!hasBrakesFailure || curRide.mechanic_status == RIDE_MECHANIC_STATUS_HAS_FIXED_STATION_BRAKES)
             {
-                auto brakeSpeed = ChooseBrakeSpeed();
+                auto brakeSpeed = ChooseBrakeSpeed() << kTrackSpeedShiftAmount;
 
-                if ((brakeSpeed << 16) < _vehicleVelocityF64E08)
+                if ((brakeSpeed) < _vehicleVelocityF64E08)
                 {
                     acceleration = -_vehicleVelocityF64E08 * 16;
                 }
@@ -7120,11 +7123,11 @@ bool Vehicle::UpdateTrackMotionForwards(const CarEntry* carEntry, const Ride& cu
         }
         else if (TrackTypeIsBooster(trackType))
         {
-            auto boosterSpeed = GetBoosterSpeed(curRide.type, (brake_speed << 16));
+            auto boosterSpeed = GetUnifiedBoosterSpeed(curRide.type, brake_speed) << kTrackSpeedShiftAmount;
             if (boosterSpeed > _vehicleVelocityF64E08)
             {
                 acceleration = GetRideTypeDescriptor(curRide.type).LegacyBoosterSettings.BoosterAcceleration
-                    << 16; //_vehicleVelocityF64E08 * 1.2;
+                    << kBoosterAccelerationShiftAmount;
             }
         }
         else if (rideEntry.flags & RIDE_ENTRY_FLAG_RIDER_CONTROLS_SPEED && num_peeps > 0)
@@ -7135,7 +7138,8 @@ bool Vehicle::UpdateTrackMotionForwards(const CarEntry* carEntry, const Ride& cu
         if ((trackType == TrackElemType::Flat && curRide.GetRideTypeDescriptor().HasFlag(RtdFlag::hasLsmBehaviourOnFlat))
             || (trackType == TrackElemType::PoweredLift))
         {
-            acceleration = GetRideTypeDescriptor(curRide.type).LegacyBoosterSettings.PoweredLiftAcceleration << 16;
+            acceleration = GetRideTypeDescriptor(curRide.type).LegacyBoosterSettings.PoweredLiftAcceleration
+                << kBoosterAccelerationShiftAmount;
         }
         if (trackType == TrackElemType::BrakeForDrop)
         {
@@ -7497,18 +7501,9 @@ bool Vehicle::UpdateTrackMotionBackwards(const CarEntry* carEntry, const Ride& c
         {
             auto brakeSpeed = ChooseBrakeSpeed();
 
-            if (-(brakeSpeed << 16) > _vehicleVelocityF64E08)
+            if (-(brakeSpeed << kTrackSpeedShiftAmount) > _vehicleVelocityF64E08)
             {
                 acceleration = _vehicleVelocityF64E08 * -16;
-            }
-        }
-
-        if (trackType == TrackElemType::Booster)
-        {
-            auto boosterSpeed = GetBoosterSpeed(curRide.type, (brake_speed << 16));
-            if (boosterSpeed < _vehicleVelocityF64E08)
-            {
-                acceleration = GetRideTypeDescriptor(curRide.type).LegacyBoosterSettings.BoosterAcceleration << 16;
             }
         }
 
